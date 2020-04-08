@@ -66,6 +66,7 @@ for i in range(len(singo1)):
             result = count(singo1[i], singo2[j], singo3[k])
             #print(type(result[0]))
             damagerate = (1 + result[0]) * (1 + result[1]) * (1 + result[2]) * (1 + result[3]) * (1 + result[4])
+            damagerate = round(damagerate, 4)
             rating.append(damagerate)
             cur1 = singo1[i][0]
             cur2 = singo2[j][0]
@@ -85,7 +86,9 @@ for i in range(len(singo1)):
                 down = singo3[k][0]
             """print(damagerate)
             print(flag)"""
-            
+rating.sort(reverse=True)
+
+print(rating)
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 print("最优搭配")
 print("伤害倍率: " + str(flag))
